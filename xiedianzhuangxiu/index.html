@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="鞋店装修设计专业指南，提供鞋店店面设计风格、装修预算、材料选择及布局方案。从实体店形象打造到顾客动线规划，助您提升品牌价值与销售业绩。">
+    <meta name="keywords" content="鞋店装修,鞋店设计,店面装修,鞋店布局,实体店装修,鞋店陈列">
+    <title>鞋店装修-实体店形象设计与空间规划指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e1e1;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .cta-btn:hover {
+            background-color: #d35400;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIiBmaWxsLW9wYWNpdHk9IjAuMDUiIGZpbGw9IiNmZmYiPjxwYXRoIGQ9Ik0wIDQwaDQwVjBIMHY0MHptMjAtMjBoMjB2MjBIMjBWMjB6TTAgMjBoMjB2MjBIMFYyMHoiLz48L3N2Zz4=');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .search-box {
+            background: white;
+            padding: 8px;
+            border-radius: 50px;
+            display: inline-flex;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            outline: none;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Stats */
+        .stats-bar {
+            background: var(--bg-white);
+            margin-top: -40px;
+            position: relative;
+            z-index: 2;
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Layout Grid for Guide */
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-image {
+            height: 240px;
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: #eaf2f8;
+            color: #2980b9;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .card-text {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .card-link {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .card-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .card-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 30px;
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .checklist li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .checklist li::before {
+            content: '✓';
+            color: #27ae60;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .budget-table th, .budget-table td {
+            text-align: left;
+            padding: 10px 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .budget-table th {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .budget-table td {
+            color: var(--text-secondary);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 60px 0;
+            background-color: var(--bg-white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: white;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col p {
+            color: #bdc3c7;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .stats-bar {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-4 3-4 1.52 0 2.47 1.3 2.5 2.5.03-1.2.98-2.5 2.5-2.5 1.52 0 2.97 1.28 3 4 .03 2.5-1 3.5-1 5.62V16"/><path d="M20 16v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-4-3-4-1.52 0-2.47 1.3-2.5 2.5-.03-1.2-.98-2.5-2.5-2.5-1.52 0-2.97 1.28-3 4-.03 2.5 1 3.5 1 5.62V16"/></svg>
+            <span>鞋店</span>装修指南
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#design">设计风格</a></li>
+                <li><a href="#budget">预算报价</a></li>
+                <li><a href="#layout">布局方案</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="cta-btn">获取免费方案</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-content">
+        <h1>打造吸睛鞋店，提升品牌溢价</h1>
+        <p>专业的鞋店装修设计策略，从空间布局到灯光陈列，助您打造高端舒适的购物环境。</p>
+        <form class="search-box" onsubmit="event.preventDefault();">
+            <input type="text" placeholder="输入您的店铺面积或需求...">
+            <button type="submit">开始设计咨询</button>
+        </form>
+    </div>
+</section>
+
+<div class="container">
+    <div class="stats-bar">
+        <div class="stat-item">
+            <h3>10年+</h3>
+            <p>行业设计经验</p>
+        </div>
+        <div class="stat-item">
+            <h3>500+</h3>
+            <p>成功落地案例</p>
+        </div>
+        <div class="stat-item">
+            <h3>3D</h3>
+            <p>全案效果图制作</p>
+        </div>
+        <div class="stat-item">
+            <h3>24h</h3>
+            <p>快速响应服务</p>
+        </div>
+    </div>
+</div>
+
+<main>
+    <section class="container" id="design">
+        <div class="section-header">
+            <h2>鞋店装修核心要素</h2>
+            <p>优秀的鞋店装修不仅仅是美观，更是销售转化率的催化剂。以下是决定店铺成败的关键设计细节。</p>
+        </div>
+        
+        <div class="guide-grid">
+            <div class="main-content">
+                <!-- Card 1 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/shoes1/800/400" alt="鞋店灯光设计" class="card-image">
+                    <div class="card-content">
+                        <span class="card-tag">照明系统</span>
+                        <h3 class="card-title">专业射灯与氛围灯的运用</h3>
+                        <p class="card-text">鞋店装修中，灯光是灵魂。建议使用显色性高的射灯聚焦在鞋面，利用洗墙灯营造层次感。避免使用大面积的白炽灯，以免鞋面反光严重，影响顾客对鞋款质感的判断。</p>
+                        <a href="#" class="card-link">阅读灯光布局指南</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/shoes2/800/400" alt="鞋店陈列架设计" class="card-image">
+                    <div class="card-content">
+                        <span class="card-tag">陈列道具</span>
+                        <h3 class="card-title">展示架高度与动线规划</h3>
+                        <p class="card-text">鞋架高度应控制在1.2米至1.5米之间，便于顾客拿取和查看。通道宽度至少保持1.2米，确保两人并排通行。利用高低错落的陈列方式，打破单调，引导顾客视线流动。</p>
+                        <a href="#" class="card-link">查看陈列架选型建议</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/shoes3/800/400" alt="鞋店地面材料" class="card-image">
+                    <div class="card-content">
+                        <span class="card-tag">地面工程</span>
+                        <h3 class="card-title">耐磨材料与防滑处理</h3>
+                        <p class="card-text">鞋店人流量大，地面材料需具备高耐磨性。推荐使用环氧地坪漆或大理石瓷砖。同时，在收银台或展示区重点区域做防滑处理，既美观又保障顾客安全。</p>
+                        <a href="#" class="card-link">了解地面材料对比</a>
+                    </div>
+                </article>
+            </div>
+
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h4 class="sidebar-title">装修避坑清单</h4>
+                    <ul class="checklist">
+                        <li>避免使用过亮或过暗的冷色调灯光。</li>
+                        <li>收银台位置需便于监控且不阻挡主通道。</li>
+                        <li>电源插座位置要预留充足，满足试鞋灯需求。</li>
+                        <li>鞋墙高度不宜超过2.2米，防止头重脚轻。</li>
+                        <li>门头设计需在5米外即可清晰识别品牌。</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h4 class="sidebar-title">不同类型鞋店预算参考</h4>
+                    <table class="budget-table">
+                        <thead>
+                            <tr>
+                                <th>店铺类型</th>
+                                <th>面积(㎡)</th>
+                                <th>预估造价</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>精品鞋店</td>
+                                <td>20-40</td>
+                                <td>800-1200元/㎡</td>
+                            </tr>
+                            <tr>
+                                <td>运动品牌店</td>
+                                <td>50-100</td>
+                                <td>600-900元/㎡</td>
+                            </tr>
+                            <tr>
+                                <td>时尚快时尚店</td>
+                                <td>30-60</td>
+                                <td>700-1000元/㎡</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>热门鞋店风格案例</h2>
+                <p>从简约现代到奢华复古，多种风格供您选择。</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/fashion1/400/300" alt="现代简约鞋店">
+                    <div class="gallery-overlay">
+                        <h4>现代简约风</h4>
+                        <p>利用黑白灰主色调，突出产品本身。</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/fashion2/400/300" alt="工业风鞋店">
+                    <div class="gallery-overlay">
+                        <h4>工业复古风</h4>
+                        <p>裸露砖墙与金属元素，打造个性空间。</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/fashion3/400/300" alt="原木风鞋店">
+                    <div class="gallery-overlay">
+                        <h4>原木自然风</h4>
+                        <p>温馨舒适，适合休闲鞋类品牌。</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/fashion4/400/300" alt="奢华风鞋店">
+                    <div class="gallery-overlay">
+                        <h4>轻奢优雅风</h4>
+                        <p>运用金箔与水晶灯，提升品牌档次。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container faq-section" id="faq">
+        <div class="section-header">
+            <h2>鞋店装修常见问题</h2>
+        </div>
+        
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">小型鞋店（20平米左右）如何装修才能显大？</div>
+                <div class="faq-answer">
+                    小型店铺应采用浅色系墙面和地面，利用镜面元素延伸视觉空间。陈列柜尽量选择通透的亚克力材质，避免厚重实木柜体。灯光要明亮均匀，减少阴影死角。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">鞋店装修需要多久周期？</div>
+                <div class="faq-answer">
+                    一般小型店铺（30-50平米）的硬装周期约为20-30天，加上软装陈列和设备调试，整体周期通常在1个月左右。大型店铺需预留2-3个月时间。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">装修材料有哪些环保标准要求？</div>
+                <div class="faq-answer">
+                    建议选择E1级或E0级板材，涂料使用净味环保漆。鞋店主要注意甲醛释放量，装修完成后建议通风3-6个月再正式营业，确保空气质量达标。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何设计合理的试鞋区？</div>
+                <div class="faq-answer">
+                    试鞋区应设置在店铺光线最柔和、最舒适的位置，通常靠近收银台或侧面。配备舒适的软凳和试鞋镜，镜面高度建议在1.5米左右，方便顾客全方位观察鞋型。
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>鞋店装修指南</h4>
+                <p>专注实体店空间设计与装修方案输出，致力于为品牌商提供从设计到落地的全流程服务。</p>
+                <p>服务热线：400-123-4567</p>
+                <p>工作时间：周一至周日 9:00 - 18:00</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#design">设计风格</a></li>
+                    <li><a href="#budget">预算报价</a></li>
+                    <li><a href="#layout">布局方案</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>相关服务</h4>
+                <ul>
+                    <li><a href="#">店铺测量</a></li>
+                    <li><a href="#">效果图制作</a></li>
+                    <li><a href="#">施工监理</a></li>
+                    <li><a href="#">软装搭配</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <p>获取最新装修案例与行业资讯。</p>
+                <p>微信：ShoeStoreDesign</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 鞋店装修指南 版权所有. 保留所有权利。</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // FAQ Toggle Logic
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', event => {
+            const parent = item.parentElement;
+            const isActive = parent.classList.contains('active');
+            
+            // Close all others
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+            });
+
+            // Toggle current
+            if (!isActive) {
+                parent.classList.add('active');
+            }
+        });
+    });
+
+    // Smooth Scroll for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+  </html>
