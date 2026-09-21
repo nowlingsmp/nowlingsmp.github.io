@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="影视工场 - 专业影视制作与后期服务指南。提供影视拍摄流程解析、后期特效制作教程、影视设备选购建议及行业资讯，帮助创作者打造高质量视听作品。">
+    <meta name="keywords" content="影视工场,影视制作,后期特效,影视设备,拍摄教程,影视剪辑">
+    <title>影视工场-专业影视制作与后期服务指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e50914;
+            --secondary-color: #221f1f;
+            --accent-color: #46d369;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f4f4f4;
+            --bg-card: #ffffff;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --border-radius: 4px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: #ccc;
+            font-size: 15px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: white;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after, .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/cinema/1920/600') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b20710;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--secondary-color);
+        }
+
+        /* 内容区布局 */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* 通用 Section */
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -16px;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .section-more {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .section-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* 热门教程卡片 */
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 160px;
+            width: 100%;
+            position: relative;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 10px;
+            font-size: 12px;
+            border-radius: 2px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* 硬件设备推荐侧边栏 */
+        .sidebar-widget {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .device-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .device-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .device-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .device-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .device-info p {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* 行业动态列表 */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 20px;
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .news-item:hover {
+            background-color: #fafafa;
+        }
+
+        .news-date {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            min-width: 60px;
+        }
+
+        .news-date .day {
+            display: block;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .news-date .month {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .news-content h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .news-content h3:hover {
+            color: var(--primary-color);
+        }
+
+        .news-excerpt {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* FAQ 区域 */
+        .faq-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-light);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+            font-size: 20px;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: #999;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 13px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            .nav-menu {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-item {
+                flex-direction: column;
+            }
+
+            .news-date {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .news-date .day, .news-date .month {
+                display: inline;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">影视工场<span>VideoStudio</span></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">拍摄指南</a></li>
+                    <li><a href="#">后期剪辑</a></li>
+                    <li><a href="#">特效合成</a></li>
+                    <li><a href="#">设备评测</a></li>
+                    <li><a href="#">行业资讯</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>打造专业级视听作品</h1>
+                <p>从前期策划到后期成片，提供全流程影视制作知识、教程与工具推荐</p>
+                <div class="hero-btns">
+                    <a href="#" class="btn">开始学习</a>
+                    <a href="#" class="btn btn-outline">浏览设备</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="main-grid">
+                <!-- 左侧主要内容区 -->
+                <div class="content-area">
+                    
+                    <!-- 热门教程推荐 -->
+                    <section>
+                        <div class="section-header">
+                            <h2 class="section-title">热门制作教程</h2>
+                            <a href="#" class="section-more">查看更多 &rarr;</a>
+                        </div>
+                        <div class="tutorial-grid">
+                            <article class="card">
+                                <div class="card-image">
+                                    <span class="card-tag">剪辑</span>
+                                    <img src="https://picsum.photos/seed/editing/400/250" alt="Pr剪辑教程">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Premiere Pro 2024 新功能深度解析与实战应用</h3>
+                                    <p class="card-desc">探索最新的时间轴优化功能，学习如何利用AI工具快速处理素材，提升剪辑效率。</p>
+                                    <div class="card-meta">
+                                        <span>阅读: 3.2k</span>
+                                        <span>难度: 中级</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="card">
+                                <div class="card-image">
+                                    <span class="card-tag">调色</span>
+                                    <img src="https://picsum.photos/seed/color/400/250" alt="调色教程">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">达芬奇专业调色工作流：从基础到色彩管理</h3>
+                                    <p class="card-desc">掌握LUT的使用、三级调色技巧以及最终输出的色彩配置文件设置。</p>
+                                    <div class="card-meta">
+                                        <span>阅读: 2.8k</span>
+                                        <span>难度: 高级</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="card">
+                                <div class="card-image">
+                                    <span class="card-tag">特效</span>
+                                    <img src="https://picsum.photos/seed/vfx/400/250" alt="AE特效教程">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">After Effects 粒子特效制作：制作酷炫的燃烧烟雾效果</h3>
+                                    <p class="card-desc">通过CC Particle World插件，一步步教你如何制作逼真的火焰和烟雾动画。</p>
+                                    <div class="card-meta">
+                                        <span>阅读: 4.1k</span>
+                                        <span>难度: 中级</span>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="card">
+                                <div class="card-image">
+                                    <span class="card-tag">运镜</span>
+                                    <img src="https://picsum.photos/seed/camera/400/250" alt="运镜技巧">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">电影级运镜技巧：斯坦尼康与稳定器的使用指南</h3>
+                                    <p class="card-desc">学习如何使用稳定器保持画面平滑，以及斯坦尼康的基本操作手法。</p>
+                                    <div class="card-meta">
+                                        <span>阅读: 1.9k</span>
+                                        <span>难度: 进阶</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- 行业资讯 -->
+                    <section>
+                        <div class="section-header">
+                            <h2 class="section-title">行业动态与资讯</h2>
+                            <a href="#" class="section-more">查看更多 &rarr;</a>
+                        </div>
+                        <div class="news-list">
+                            <article class="news-item">
+                                <div class="news-date">
+                                    <span class="day">15</span>
+                                    <span class="month">Oct</span>
+                                </div>
+                                <div class="news-content">
+                                    <h3><a href="#">2024年影视后期制作趋势预测：AI将如何改变工作流？</a></h3>
+                                    <p class="news-excerpt">随着人工智能技术的飞速发展，自动剪辑、智能配音等功能逐渐成熟，传统影视后期岗位将面临怎样的变革？</p>
+                                </div>
+                            </article>
+
+                            <article class="news-item">
+                                <div class="news-date">
+                                    <span class="day">12</span>
+                                    <span class="month">Oct</span>
+                                </div>
+                                <div class="news-content">
+                                    <h3><a href="#">索尼发布全画幅电影摄影机 FX9 Mark II，画质与性能全面升级</a></h3>
+                                    <p class="news-excerpt">新一代摄影机在低光表现、对焦速度以及双原生ISO方面均有显著提升，适合中高端影视制作团队。</p>
+                                </div>
+                            </article>
+
+                            <article class="news-item">
+                                <div class="news-date">
+                                    <span class="day">08</span>
+                                    <span class="month">Oct</span>
+                                </div>
+                                <div class="news-content">
+                                    <h3><a href="#">8K视频时代的到来：剪辑工作站配置选购建议</a></h3>
+                                    <p class="news-excerpt">想要流畅剪辑8K素材，你的电脑需要具备什么样的硬件配置？显卡、内存和硬盘的选择指南。</p>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- FAQ 常见问题 -->
+                    <section class="faq-section">
+                        <div class="section-header">
+                            <h2 class="section-title">新手常见问题</h2>
+                        </div>
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <div class="faq-question">新手应该先学习哪个剪辑软件？</div>
+                                <div class="faq-answer">建议从 Adobe Premiere Pro 入手，它是目前市场上最普及且功能强大的非编软件，教程资源丰富，兼容性较好。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">剪辑视频需要什么样的电脑配置？</div>
+                                <div class="faq-answer">剪辑4K视频建议至少配备16GB内存，优先选择NVIDIA RTX 3060及以上显卡，并使用NVMe SSD固态硬盘。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">如何提升视频的调色质感？</div>
+                                <div class="faq-answer">除了掌握LUT的使用，更重要的是学习色彩理论，包括色温、色相、饱和度的调整，以及光影关系的处理。</div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- 右侧侧边栏 -->
+                <aside class="sidebar">
+                    <!-- 硬件推荐 -->
+                    <div class="sidebar-widget">
+                        <h3 class="sidebar-title">热门硬件推荐</h3>
+                        <ul class="device-list">
+                            <li>
+                                <div class="device-icon">📷</div>
+                                <div class="device-info">
+                                    <h4>索尼 A7M4</h4>
+                                    <p>全画幅微单 | 4K 60p</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="device-icon">🎥</div>
+                                <div class="device-info">
+                                    <h4>大疆 Ronin 4D</h4>
+                                    <p>电影级相机 | 360度云台</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="device-icon">🎧</div>
+                                <div class="device-info">
+                                    <h4>铁三角 MDR-7506</h4>
+                                    <p>监听耳机 | 专业的音频参考</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="device-icon">💾</div>
+                                <div class="device-info">
+                                    <h4>三星 990 PRO</h4>
+                                    <p>高速固态硬盘 | 读写7450MB/s</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 资源下载 -->
+                    <div class="sidebar-widget">
+                        <h3 class="sidebar-title">实用资源下载</h3>
+                        <ul class="device-list">
+                            <li>
+                                <div class="device-icon">📦</div>
+                                <div class="device-info">
+                                    <h4>达芬奇 LUT 包</h4>
+                                    <p>电影感预设 (100组)</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="device-icon">🎨</div>
+                                <div class="device-info">
+                                    <h4>AE 模版合集</h4>
+                                    <p>文字转场与动态图形</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于影视工场</h4>
+                    <p>影视工场致力于为影视创作者提供最专业、最前沿的制作知识与工具支持。我们相信，好的工具加上精湛的技艺，才能创造出不朽的影像。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">拍摄技巧</a></li>
+                        <li><a href="#">后期教程</a></li>
+                        <li><a href="#">设备评测</a></li>
+                        <li><a href="#">影视资源</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">投稿合作</a></li>
+                        <li><a href="#">广告服务</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <p>微信公众号：影视工场</p>
+                    <p>邮箱：contact@videostudio.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 影视工场 VideoStudio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', function() {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                              </html>
