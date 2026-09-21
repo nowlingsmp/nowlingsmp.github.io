@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="风车牧场官网 - 专注高品质有机牧草种植、奶牛科学养殖及纯天然乳制品生产。提供牧场直供、乳制品选购指南及生态农业参观服务。">
+    <meta name="keywords" content="风车牧场, 有机牧场, 乳制品, 天然牛奶, 生态农业">
+    <title>风车牧场-天然有机乳制品与生态农业服务平台</title>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --primary-dark: #388E3C;
+            --secondary-color: #8BC34A;
+            --accent-color: #FF9800;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f9fbf9;
+            --bg-white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            position: relative;
+        }
+        
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            border: 3px solid white;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 50, 20, 0.6), rgba(0, 50, 20, 0.6)), url('https://picsum.photos/seed/farmhero/1920/1080.jpg') center/cover no-repeat;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary-dark);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--bg-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            background: var(--bg-body);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Product Showcase */
+        .products {
+            background-color: var(--bg-body);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+
+        .buy-btn {
+            background-color: var(--bg-body);
+            color: var(--primary-dark);
+            border: 1px solid var(--primary-dark);
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .buy-btn:hover {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+
+        /* Farming Process */
+        .process {
+            background-color: var(--bg-white);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background-color: #e0e0e0;
+            z-index: 0;
+            display: none;
+        }
+
+        @media(min-width: 768px) {
+            .process-steps::before {
+                display: block;
+            }
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+
+        .step-item h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .step-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            padding: 0 10px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--bg-body);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: var(--bg-white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-main);
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            margin-top: 15px;
+            color: var(--text-light);
+            display: none;
+            padding-left: 10px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item .faq-question::after {
+            content: '+';
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e2a;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"></div>
+                风车牧场
+            </a>
+            <nav class="nav-links">
+                <a href="#about">关于我们</a>
+                <a href="#products">精选产品</a>
+                <a href="#process">养殖过程</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#products" class="cta-btn">立即选购</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>回归自然，纯粹奶源</h1>
+            <p>风车牧场坚持生态种植与科学养殖，为您提供0添加、0污染的天然乳制品体验。每一滴牛奶都源于对自然的敬畏。</p>
+            <div class="hero-buttons">
+                <a href="#products" class="cta-btn">浏览商品</a>
+                <a href="#about" class="btn-outline">了解牧场</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section-padding features">
+        <div class="container">
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>有机牧草种植</h3>
+                    <p>选用优质有机种子，采用自然轮作方式，拒绝化学农药，确保牧草天然健康。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🐄</div>
+                    <h3>科学养殖管理</h3>
+                    <p>引进国际先进挤奶设备，实行24小时恒温监控，保障奶牛健康与福利。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🏭</div>
+                    <h3>无菌加工工艺</h3>
+                    <p>全封闭生产车间，巴氏杀菌技术锁住营养，保留牛奶原始风味。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>全程冷链配送</h3>
+                    <p>从牧场到餐桌，全程冷链保鲜，确保您收到的每一瓶牛奶都是新鲜的。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="section-padding products">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">牧场直供精选</h2>
+                <p class="section-subtitle">从源头把控品质，让您喝得放心</p>
+            </div>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag">畅销</span>
+                        <img src="https://picsum.photos/seed/milk1/400/300.jpg" alt="纯牛奶">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">乳制品</div>
+                        <h3 class="product-title">风车牧场全脂纯牛奶</h3>
+                        <p class="product-desc">源自100%纯种荷斯坦奶牛，富含天然乳钙与蛋白质，口感浓郁香醇。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥12.9 / 盒</span>
+                            <button class="buy-btn">加入购物车</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag">新品</span>
+                        <img src="https://picsum.photos/seed/yogurt/400/300.jpg" alt="酸奶">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">发酵乳</div>
+                        <h3 class="product-title">原味浓稠酸奶</h3>
+                        <p class="product-desc">添加活性益生菌，不添加蔗糖，酸甜适中，早餐健康首选。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥18.5 / 盒</span>
+                            <button class="buy-btn">加入购物车</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag">推荐</span>
+                        <img src="https://picsum.photos/seed/cheese/400/300.jpg" alt="奶酪">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">休闲零食</div>
+                        <h3 class="product-title">高钙风车奶酪棒</h3>
+                        <p class="product-desc">儿童喜爱的营养零食，每100g含钙量高，独立包装方便携带。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥9.9 / 包</span>
+                            <button class="buy-btn">加入购物车</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/seed/cream/400/300.jpg" alt="奶油">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">烘焙原料</div>
+                        <h3 class="product-title">动物淡奶油</h3>
+                        <p class="product-desc">乳脂含量35%，打发后口感绵密，适合制作蛋糕、慕斯及咖啡拉花。</p>
+                        <div class="product-footer">
+                            <span class="product-price">¥25.0 / 听</span>
+                            <button class="buy-btn">加入购物车</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="section-padding process">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">生态养殖流程</h2>
+                <p class="section-subtitle">透明化生产，见证每一滴奶的诞生</p>
+            </div>
+            <div class="process-steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h4>天然牧草</h4>
+                    <p>在无污染的山坡上种植黑麦草与紫花苜蓿，定期轮作，保持土壤肥力。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h4>科学喂养</h4>
+                    <p>每日定时定量投喂新鲜牧草与精饲料，确保奶牛摄入均衡营养。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h4>智能挤奶</h4>
+                    <p>采用管道式挤奶设备，全程无菌操作，挤奶后立即进行冷却处理。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h4>严格检测</h4>
+                    <p>经过乳成分分析、抗生素残留检测等多项专业质检，合格后方可上市。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://picsum.photos/seed/farmer/600/400.jpg" alt="牧场实景">
+                </div>
+                <div class="about-text">
+                    <h2>风车牧场：守护餐桌上的安全</h2>
+                    <p>风车牧场成立于2010年，坐落于风景秀丽的生态农业示范区。我们坚持“回归自然，科技赋能”的发展理念，致力于打造从田间到餐桌的完整产业链。</p>
+                    <p>牧场占地面积500亩，拥有标准化牛舍20栋，存栏优质奶牛3000余头。我们深知消费者对食品安全的关注，因此建立了严格的品控体系，确保每一份产品都符合国家有机食品标准。</p>
+                    <p>欢迎各界朋友莅临参观指导，体验真实的田园生活与乳制品加工过程。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding faq">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">常见问题解答</h2>
+                <p class="section-subtitle">关于产品与配送的疑问</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">你们的牛奶是巴氏杀菌还是超高温灭菌？</div>
+                    <div class="faq-answer">我们主要销售巴氏杀菌奶，这种工艺能最大程度保留牛奶中的活性营养物质和天然风味。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">牧场支持参观吗？</div>
+                    <div class="faq-answer">是的，风车牧场常年对外开放参观，您可以通过官网或电话预约，亲身感受生态养殖环境。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何保证配送的新鲜度？</div>
+                    <div class="faq-answer">我们与专业冷链物流合作，所有订单均使用保温箱和干冰配送，确保产品在送达时依然处于最佳状态。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">产品有保质期吗？</div>
+                    <div class="faq-answer">巴氏杀菌奶保质期较短，通常为7-15天，请根据生产日期合理安排饮用。超高温灭菌奶保质期较长。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>风车牧场</h4>
+                    <p style="color: #ccc; font-size: 0.9rem; line-height: 1.8;">
+                        致力于为消费者提供高品质、安全放心的天然乳制品，打造值得信赖的农牧品牌。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#products">产品中心</a></li>
+                        <li><a href="#process">生产流程</a></li>
+                        <li><a href="#faq">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：service@fengchemu.com</li>
+                        <li>地址：XX省XX市生态农业示范区88号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 风车牧场 版权所有. 本网站仅供展示，不涉及真实商业交易。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ad Script -->
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                          </html>
